@@ -1,0 +1,20 @@
+.git
+.github
+.pytest_cache
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+node_modules
+frontend/node_modules
+frontend/dist
+.dist
+.env
+tests/parity_images
+*.log
+*.ipynb
+
+# Training checkpoints are not needed at runtime
+output_baseline/models/
+output_gan/models/
+output_gan/gan_checkpoints/

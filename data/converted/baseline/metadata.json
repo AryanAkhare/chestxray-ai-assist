@@ -1,0 +1,23 @@
+{
+  "name": "baseline",
+  "architecture": "torchvision ResNet18 + Linear(512,14)",
+  "labels": [
+    "Atelectasis",
+    "Cardiomegaly",
+    "Consolidation",
+    "Edema",
+    "Effusion",
+    "Emphysema",
+    "Fibrosis",
+    "Hernia",
+    "Infiltration",
+    "Mass",
+    "Nodule",
+    "Pleural_Thickening",
+    "Pneumonia",
+    "Pneumothorax"
+  ],
+  "source_sha256": "dc3dab1e3e799fd4e4b299bca61e7e443c9a8ba2218348f03db0a8417527d268",
+  "weights_sha256": "b3e1ea006f3680e927c9eb07013b99c0432be95288c8a450b34e60f372936706",
+  "source_file": "output_baseline\\models\\best_model.pt"
+}

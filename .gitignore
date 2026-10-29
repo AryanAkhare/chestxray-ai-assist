@@ -1,0 +1,25 @@
+# Local credentials and secrets
+*Kaggle*API*.txt
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python and frontend build artifacts
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+frontend/dist/
+.pytest_cache/
+
+# Local state and converted weights
+data/local.db
+data/converted/
+
+# Training checkpoints are not needed at runtime
+output_baseline/models/
+output_gan/models/
+output_gan/gan_checkpoints/

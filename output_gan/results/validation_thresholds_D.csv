@@ -1,0 +1,15 @@
+finding,threshold,selected_on,method,n_val_pos
+Atelectasis,0.23405630886554718,validation,max_F1_on_validation_PR_curve,1111
+Cardiomegaly,0.14080816507339478,validation,max_F1_on_validation_PR_curve,207
+Consolidation,0.1872812807559967,validation,max_F1_on_validation_PR_curve,319
+Edema,0.20995521545410156,validation,max_F1_on_validation_PR_curve,152
+Effusion,0.30455854535102844,validation,max_F1_on_validation_PR_curve,1051
+Emphysema,0.2525683343410492,validation,max_F1_on_validation_PR_curve,129
+Fibrosis,0.044597577303647995,validation,max_F1_on_validation_PR_curve,173
+Hernia,0.018546564504504204,validation,max_F1_on_validation_PR_curve,26
+Infiltration,0.25645938515663147,validation,max_F1_on_validation_PR_curve,1650
+Mass,0.21174263954162598,validation,max_F1_on_validation_PR_curve,500
+Nodule,0.08525123447179794,validation,max_F1_on_validation_PR_curve,586
+Pleural_Thickening,0.07450025528669357,validation,max_F1_on_validation_PR_curve,320
+Pneumonia,0.03179866820573807,validation,max_F1_on_validation_PR_curve,115
+Pneumothorax,0.3385143280029297,validation,max_F1_on_validation_PR_curve,318

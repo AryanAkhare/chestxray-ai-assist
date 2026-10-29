@@ -1,0 +1,20 @@
+services:
+  chestxray-assist:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: chestxray-ai-assist:latest
+    container_name: chestxray-ai-assist
+    restart: unless-stopped
+    ports:
+      - "${PORT:-8000}:8000"
+    environment:
+      - APP_HOST=0.0.0.0
+      - APP_PORT=8000
+      - APP_DATA_DIR=/app/data
+      - JWT_SECRET=${JWT_SECRET:-insecure-default-change-me-in-production}
+      - MAX_UPLOAD_MB=${MAX_UPLOAD_MB:-50}
+    volumes:
+      - ./data:/app/data
+      - ./output_baseline:/app/output_baseline:ro
+      - ./output_gan:/app/output_gan:ro

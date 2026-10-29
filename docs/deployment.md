@@ -23,13 +23,7 @@ The project includes a **multi-stage Docker build** that:
    ```bash
    cp .env.example .env
    ```
-   Generate a random secret for JWT authentication and update `JWT_SECRET` in `.env`:
-   ```bash
-   # On Linux/macOS:
-   openssl rand -hex 32
-   # On Windows PowerShell:
-   [System.Convert]::ToHexString([System.Security.Cryptography.RandomNumberGenerator]::GetBytes(32)).ToLower()
-   ```
+   The web workspace is open without sign-in. `JWT_SECRET` is not needed for normal web use.
 
 2. **Build and Launch Container**:
    ```bash
@@ -53,8 +47,7 @@ The project includes a **multi-stage Docker build** that:
 
 4. **Access the Web Application**:
    - Open [http://localhost:8000](http://localhost:8000) in your browser.
-   - **First-run Admin Setup**: If this is your first time launching, create the administrator account (requires a password of at least 12 characters).
-   - Log in and start reviewing chest X-ray analyses.
+   - The workspace opens directly. No account setup is needed.
 
 5. **Stop or Restart**:
    ```bash
@@ -178,6 +171,8 @@ If you prefer running directly on a host with Python and Node.js:
 ---
 
 ## 4. Production Security & Data Persistence
+
+The app does not require authentication. Anyone who can reach its public URL can submit analyses, access the shared analysis history, and provide feedback. Use hosting-level access controls or a private network if access should be limited.
 
 1. **Data Volume (`./data`)**:
    - The `./data` folder contains `local.db` (SQLite audit logs, users, feedback, analysis records) and `converted/` (safetensors models).

@@ -16,7 +16,7 @@ cp .env.example .env
 docker compose up --build -d
 ```
 
-Open [http://localhost:8000](http://localhost:8000) and create the initial administrator account.
+Open [http://localhost:8000](http://localhost:8000) to go directly to the workspace.
 
 ## Start on Windows (Local Development)
 
@@ -25,7 +25,7 @@ Open [http://localhost:8000](http://localhost:8000) and create the initial admin
 3. Run `python scripts/convert_checkpoints.py` once. It converts the trusted local checkpoint files to `data/converted/`. The app loads only safetensors weights and verifies their hashes.
 4. In one terminal, run `uvicorn backend.app.main:app --host 127.0.0.1 --port 8000`.
 5. In a second terminal, `cd frontend`, run `npm install`, then `npm run dev`.
-6. Open the local Vite URL and create the first local administrator account. The default server binds to loopback.
+6. Open the local Vite URL to go directly to the workspace. The default server binds to loopback.
 
 The original `output_baseline/` and `output_gan/` folders are read-only model/result inputs. No Kaggle credential file is read or copied; matching credential patterns are ignored by Git.
 
@@ -35,7 +35,9 @@ Use Python 3.11 and Node.js, install the same pinned dependencies, convert check
 
 ## Runtime and privacy notes
 
-Uploads are processed in memory. The database stores scores, reviewer feedback, timestamps, case IDs, and the source-file hash; it does not store image pixels or patient tags. A 50 MB size limit applies by default. Converted model weights and the local SQLite database are ignored by Git. Sessions expire after eight hours and are invalidated on server restart.
+The workspace is open without sign-in. Anyone who can reach the deployment can upload studies, create analyses, and view the shared analysis history. Restrict access at the hosting or network layer if the deployment should not be public.
+
+Uploads are processed in memory. The database stores scores, reviewer feedback, timestamps, case IDs, and the source-file hash; it does not store image pixels or patient tags. A 50 MB size limit applies by default. Converted model weights and the local SQLite database are ignored by Git.
 
 ## Verification
 

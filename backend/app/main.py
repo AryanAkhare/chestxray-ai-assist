@@ -77,7 +77,10 @@ async def headers(request,call_next):
     return response
 
 def current_user(authorization: str|None=Header(default=None)):
-    if not authorization or not authorization.startswith("Bearer "): raise HTTPException(401,"Sign in required.")
+    # Public research deployment mode: requests without a session use a shared
+    # guest identity. Keep token validation for clients that still send one.
+    if not authorization: return {"sub":"guest","role":"reviewer"}
+    if not authorization.startswith("Bearer "): raise HTTPException(401,"Invalid authorization header.")
     try: return jwt.decode(authorization[7:],SECRET,algorithms=ALGS)
     except Exception: raise HTTPException(401,"Session expired; sign in again.")
 
